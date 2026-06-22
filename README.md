@@ -4,7 +4,7 @@ API REST desarrollada en ASP.NET Core 8 que permite autenticación mediante JWT 
 
 ## Tecnologías utilizadas
 
-- ASP.NET Core 8
+- ASP.NET Core 9
 - Entity Framework Core
 - PostgreSQL (Supabase)
 - JWT Bearer Authentication
@@ -12,14 +12,6 @@ API REST desarrollada en ASP.NET Core 8 que permite autenticación mediante JWT 
 - BCrypt
 
 ---
-
-## Requisitos
-
-Antes de ejecutar el proyecto asegúrese de tener instalado:
-
-- .NET SDK 8
-- Git
-- Cuenta de Supabase
 
 Verificar instalación:
 
