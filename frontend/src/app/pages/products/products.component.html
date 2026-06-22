@@ -1,0 +1,63 @@
+<div class="page">
+    <header class="topbar">
+        <div class="brand">
+        <span class="brand-mark">●</span>
+        <span class="brand-name">Tienda</span>
+        </div>
+        <button class="btn-logout" (click)="logout()">Cerrar sesión</button>
+    </header>
+
+    <main class="content">
+        <div class="content-header">
+        <h1>Catálogo de productos</h1>
+        <p class="count">
+            @if (!isLoading() && !errorMessage()) {
+            {{ products().length }} productos disponibles
+            }
+        </p>
+        </div>
+
+        @if (isLoading()) {
+        <div class="state-message">Cargando productos…</div>
+        }
+
+        @if (errorMessage()) {
+        <div class="state-message error">
+            {{ errorMessage() }}
+            <button class="btn-retry" (click)="fetchProducts()">Reintentar</button>
+        </div>
+        }
+        @if (!isLoading() && !errorMessage()) {
+        <button (click)="abrirModal()" class="boton_agregar_movimiento">Nuevo Movimiento</button>
+
+        <app-movimiento
+        *ngIf="mostrarModal"
+        (cerrar)="cerrarModal()"
+        (guardar)="guardarMovimiento($event)"
+        ></app-movimiento>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>idproducto</th>
+                            <th>producto</th>
+                            <th>cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (product of products(); track product.productoId) {
+                        <tr>
+                            <td>
+                            {{product.productoId}}
+                            </td>
+                            <td>{{product.nombre}}</td>
+                            <td>{{product.cantidad}}</td>
+                        </tr>
+                    }
+                    </tbody>
+                
+                </table>
+            </div>
+        }
+    </main>
+</div>
