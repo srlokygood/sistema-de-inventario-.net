@@ -1,6 +1,6 @@
 # Prueba Técnica - Backend .NET + Supabase
 
-API REST desarrollada en ASP.NET Core 8 que permite autenticación mediante JWT y consulta de datos almacenados en Supabase (PostgreSQL).
+API REST desarrollada en ASP.NET Core 9 que permite autenticación mediante JWT y consulta de datos almacenados en Supabase (PostgreSQL).
 
 ## Tecnologías utilizadas
 
